@@ -1,20 +1,22 @@
-<p>
-  <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon">
-      <mat-icon (click)="this.sideNav.open()" class="mat-18">menu</mat-icon>
-      <mat-icon (click)="this.sideNav.close()" class="mat-18">close</mat-icon>
-    </button>
-    <span>My Application</span>
-  </mat-toolbar>
-</p>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon">
+    <mat-icon (click)="sideNav.toggle()" *ngIf="!sideNav.opened" class="mat-18">menu</mat-icon>
+    <mat-icon (click)="sideNav.toggle()" *ngIf="sideNav.opened" class="mat-18">close</mat-icon>
+  </button>
+  <span>My Application</span>
+</mat-toolbar>
+
 <mat-sidenav-container>
-  <mat-sidenav #sidenav ="matSidenav">
-    <img src="" alt="" class="avatar mat-elavation-z8">
+  <mat-sidenav #sidenav="matSidenav" mode="side">
+    <img src="" alt="" class="avatar mat-elevation-z8">
     <h4>Lets program</h4>
     <mat-divider></mat-divider>
-     <button mat-button class="menu-button">
+    <button mat-button class="menu-button">
       <mat-icon>event_note</mat-icon>
       <span>abc news</span>
     </button>
   </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Your main content goes here -->
+  </mat-sidenav-content>
 </mat-sidenav-container>
