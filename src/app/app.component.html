@@ -1,8 +1,8 @@
 <p>
   <mat-toolbar color="primary">
     <button mat-icon-button class="example-icon">
-      <mat-icon class="mat-18">menu</mat-icon>
-      <mat-icon class="mat-18">close</mat-icon>
+      <mat-icon (click)="this.sideNav.open()" class="mat-18">menu</mat-icon>
+      <mat-icon (click)="this.sideNav.close()" class="mat-18">close</mat-icon>
     </button>
     <span>My Application</span>
   </mat-toolbar>
