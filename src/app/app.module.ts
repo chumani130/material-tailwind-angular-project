@@ -1,29 +1,25 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import { MatSidenavModule } from "@angular/material/sidenav";
-import { MatDividerModule } from "@angular/material/divider"
-import {MatIconModule} from '@angular/material/icon';
+import { YourComponent } from './your-component/your-component.component';
+import { AppComponent } from './app/app.component'; // Import the AppComponent
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [YourComponent, AppComponent], // Include both components
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    BrowserAnimationsModule,
+    LayoutModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], // Set AppComponent as the bootstrap component
 })
-export class AppModule { }
+export class AppModule {}
